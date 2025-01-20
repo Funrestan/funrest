@@ -1,13 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>网页标题</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestWeb</title>
+    <style>
+        /* 样式部分 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            height: 100vh; /* 视口高度 */
+            background-color: #f0f0f0; /* 背景颜色 */
+            font-family: Arial, sans-serif; /* 字体 */
+        }
+
+        .container {
+            border: 2px solid #333; /* 自适应边框 */
+            padding: 20px; /* 内边距 */
+            background-color: #fff; /* 容器背景 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            text-align: center; /* 文字居中 */
+            max-width: 600px; /* 最大宽度 */
+            width: 100%; /* 自适应宽度 */
+            transition: transform 0.3s ease; /* 平滑过渡效果 */
+        }
+
+        h1, h2 {
+            margin: 0; /* 去掉默认外边距 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            transition: font-size 0.3s ease; /* 字体大小平滑过渡 */
+        }
+
+        h1:hover {
+            font-size: calc(2em + 6px); /* 字体增大3px */
+        }
+
+        h2:hover {
+            font-size: calc(1.5em + 3px); /* 字体增大3px */
+        }
+
+        h1 {
+            font-size: 2em; /* 主标题字体大小 */
+            title: "你好"; /* 鼠标悬停提示 */
+        }
+
+        h2 {
+            font-size: 1.5em; /* 副标题字体大小 */
+            color: #666; /* 副标题颜色 */
+            title: "这里是风催竹残的测试网页"; /* 鼠标悬停提示 */
+        }
+    </style>
 </head>
 <body>
-<h1>这是一个标题</h1>
-<p>这是一个段落。</p>
-<a href="https://www.neokoni.ink">这是一个链接</a>
+    <div class="container">
+        <h1 id="title1">Hi</h1>
+        <h2 id="title2">This's Funrestan's TestWeb</h2>
+    </div>
 
+    <script>
+        // JavaScript部分
+        document.getElementById('title1').addEventListener('click', function() {
+            alert("gmy's TestWeb");
+        });
+
+        document.getElementById('title2').addEventListener('click', function() {
+            alert("这里是风催竹残的测试网页");
+        });
+    </script>
 </body>
 </html>
