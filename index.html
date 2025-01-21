@@ -3,38 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestWeb</title>
+    <title>Test Web</title>
     <style>
-        /* 样式部分 */
-        body {
+        /* 全局样式 */
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 导航栏样式 */
+        .nav {
+            height: 10%; /* 占页面高度的10% */
+            width: 100%;
+            background: linear-gradient(to left, rgba(72, 8, 221, 0.8), rgba(4, 60, 165, 0.8)); /* 渐变色 */
             display: flex;
-            justify-content: center; /* 水平居中 */
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            height: 90%; /* 除去导航栏后的剩余高度 */
+            display: flex;
             align-items: center; /* 垂直居中 */
-            height: 100vh; /* 视口高度 */
-            background-color: #f0f0f0; /* 背景颜色 */
-            font-family: Arial, sans-serif; /* 字体 */
+            padding-left: 20px; /* 水平居左 */
         }
 
-        .container {
-            border: 2px solid #333; /* 自适应边框 */
-            padding: 20px; /* 内边距 */
-            background-color: #fff; /* 容器背景 */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-            text-align: center; /* 文字居中 */
-            max-width: 600px; /* 最大宽度 */
-            width: 100%; /* 自适应宽度 */
-            transition: transform 0.3s ease; /* 平滑过渡效果 */
+        /* 个人信息块 */
+        .my-information {
+    width: calc(100% / 3); /* 底边长度为页面宽度的1/3 */
+    background: linear-gradient(to top, rgba(0, 56, 54, 0.8), rgba(41, 255, 148, 0.8)); /* 渐变色 */
+    padding: 20px;
+    border-radius: 10px; /* 可选：添加圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+    opacity: 0.8; /* 初始不透明度为0.5 */
+    position: relative; /* 用于定位边框 */
+}
+
+.my-information:hover {
+    opacity: 1; /* 鼠标悬停时，不透明度变为1 */
+    transform: scale(1.1); /* 放大10% */
+    width: calc(100% / 3); /* 底边长度保持为页面宽度的1/3 */
+    border: 2% solid transparent; /* 边框宽度为底边长度的2% */
+    border-image: radial-gradient(circle at center, rgba(50, 50, 50, 1), rgba(200, 200, 200, 0)) 1; /* 从中心到外部的径向渐变边框 */
+}
+
+
+.my-information:hover::before {
+    content: "test"; /* 显示标题 */
+    position: absolute;
+    top: -20px; /* 标题位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+        .my-information h1, .my-information h2, .my-information p {
+            margin: 0;
+            margin-bottom: 5px; /* 添加间距 */
         }
 
-        h1, h2 {
-            margin: 0; /* 去掉默认外边距 */
-            cursor: pointer; /* 鼠标悬停时显示手型 */
-            transition: font-size 0.3s ease; /* 字体大小平滑过渡 */
+        .my-information hr {
+            border: 0;
+            height: 1px;
+            background: black; /* 黑色水平分割线 */
+            margin: 5px 0; /* 上下间距 */
         }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        Navigation Bar
+    </div>
 
-        h1:hover {
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <!-- 个人信息块 -->
+        <div class="my-information">
+            <h1>HI!</h1>
+            <h2>I'm Funrestan</h2>
+            <hr> <!-- 黑色水平分割线 -->
+            <p>Funrestan's TestWeb</p>
+        </div>
+    </div>
+</body>
+</html>        h1:hover {
             font-size: calc(2em + 6px); /* 字体增大3px */
         }
 
