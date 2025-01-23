@@ -444,13 +444,23 @@
             /* 设置高度为120px*/
             height: 120px;
             /* 设置背景图片为./img/2.gif*/
-            background-image: url(2.gif);
+            background-image: url(3.jpg);
             /* 设置背景大小为cover*/
             background-size: cover;
             /* 设置透明度为0.7*/
             opacity: .7;
             /* 设置边框圆角为50% */
             border-radius: 50%;
+            animation: spin-jpg 0.3s infinite linear;
+        }
+        @keyframes spin-jpg {
+            from {
+                transform:rotate(0deg);
+            }
+
+            to {
+                transform:rotate(360deg);
+            }
         }
 
         /* 定义box内部的i元素*/
@@ -589,7 +599,7 @@
                         </div>
                         <div class="content">
                             <div class="text">
-                                <h3>Funrestan</h3>
+                                <h3>Funrestan-过敏羊</h3>
                                 <h6>风催竹残-过敏羊</h6>
                             </div>
                             <div class="btn"><span></span></div>
